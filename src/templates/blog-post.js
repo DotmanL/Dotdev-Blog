@@ -9,7 +9,9 @@ return (
     <div>
     
     <h1> {post.frontmatter.title}</h1>
+    <p> {post.frontmatter.description}</p>
     <div dangerouslySetInnerHTML ={{ __html: post.html }} />
+    <p> {post.wordCount.words} words</p>
     </div>
     </Layout>
 )
@@ -21,7 +23,11 @@ query($slug: String!){
     html
     frontmatter {
         title
+        description
     }
+    wordCount {
+        words
+      }
     }
     }
 `

@@ -23,13 +23,16 @@ export default ({data}) => (
        <h4> {data.allMarkdownRemark.totalCount} Posts</h4>
       {
         data.allMarkdownRemark.edges.map (({node}) => (
-          <div key ={node.id}>
+          <div key ={node.id} >
+            <p>Time to read: {node.timeToRead} min(s)</p>
             <BlogLink to={node.fields.slug}>
             <BlogTitle>
               {node.frontmatter.title} - {node.frontmatter.date}
+              
               </BlogTitle>
             </BlogLink>
             <p> {node.excerpt}</p>
+            <p> {node.wordCount.words} words</p>
           </div>
         ))}
     </div>
@@ -43,6 +46,7 @@ query {
     edges {
       node {
         id
+        timeToRead
         frontmatter {
           date
           description
@@ -51,8 +55,12 @@ query {
         fields{
           slug
         }
+        wordCount {
+          words
+        }
         html
         excerpt
+    
       }
       
     }
