@@ -2,6 +2,7 @@
 title: "Hello Everyone"
 date: "2020-04-15"
 description: 'My First Blog Post'
+author: 'Lawal Oladotun'
 ---
 
 

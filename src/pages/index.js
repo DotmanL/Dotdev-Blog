@@ -12,7 +12,7 @@ const BlogLink =styled(Link)`
 text-decoration: none;
 `
 
-const BlogTitle = styled.h3 `
+const BlogTitle = styled.h2 `
 margin-bottom: 20px;
 color: black;
 `
@@ -24,14 +24,13 @@ export default ({data}) => (
       {
         data.allMarkdownRemark.edges.map (({node}) => (
           <div key ={node.id} >
-            <p>Time to read: {node.timeToRead} min(s)</p>
             <BlogLink to={node.fields.slug}>
             <BlogTitle>
               {node.frontmatter.title} - {node.frontmatter.date}
-              
               </BlogTitle>
             </BlogLink>
             <p> {node.excerpt}</p>
+            <span><h4>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
             <p> {node.wordCount.words} words</p>
           </div>
         ))}
@@ -51,6 +50,7 @@ query {
           date
           description
           title
+          author
         }
         fields{
           slug

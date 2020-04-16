@@ -9,6 +9,7 @@ return (
     <div>
     
     <h1> {post.frontmatter.title}</h1>
+    <h3> {post.frontmatter.author}  {post.timeToRead} min read</h3>
     <p> {post.frontmatter.description}</p>
     <div dangerouslySetInnerHTML ={{ __html: post.html }} />
     <p> {post.wordCount.words} words</p>
@@ -21,9 +22,11 @@ export const query = graphql `
 query($slug: String!){
     markdownRemark( fields: { slug: {eq: $slug }}) {
     html
+    timeToRead
     frontmatter {
         title
         description
+        author
     }
     wordCount {
         words
