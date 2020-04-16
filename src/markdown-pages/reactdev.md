@@ -23,5 +23,7 @@ React is declarative, ie: doesn't manipulate the DOM, rather it repaints the DOM
 
 In react, we build our web apps like lego blocks using the concept of components. Lets picture this, we are building a static site that has an header, cover and a footer. In reacts all these blocks will be classified as components thats makes up the sites. The components can either be a class or functional component. Class components are actually becoming less relevant due to the introduction of hooks which now allows us to now call our states in functional components. Class components were mainly used before the addition of hooks because of the capability of holding states.
 
+
 3  React makes use of unidirectional data flow.
+
 4  React is all about the User Interface, the rest is all to you the developer.
