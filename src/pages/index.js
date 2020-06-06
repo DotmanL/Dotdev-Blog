@@ -12,28 +12,46 @@ const BlogLink =styled(Link)`
 text-decoration: none;
 `
 
-const BlogTitle = styled.h2 `
+const BlogTitle = styled.h3 `
 margin-bottom: 20px;
 color: black;
 `
+const Card = styled.div`
+background: #f1faee;
+color: white;
+width: 40vw;
+height: auto;
+border-radius: 10px;
+display: flex;
+padding: 10px 15px;
+flex-direction: column;
+justify-content: space-evenly;
+margin-right: auto;
+margin-left: auto;
+margin-top: 30px;
+`
+
 export default ({data}) => (
   <Layout>
     <SEO title="Home" />
-    <div>
-       <h4> {data.allMarkdownRemark.totalCount} Posts</h4>
-      {
+    <div >
+       <h4 style={{ 'marginLeft': '40vw',}}> {data.allMarkdownRemark.totalCount} Posts</h4>
+      
+         {
         data.allMarkdownRemark.edges.map (({node}) => (
-          <div key ={node.id} >
+          <Card key ={node.id} >
             <BlogLink to={node.fields.slug}>
             <BlogTitle>
               {node.frontmatter.title} - {node.frontmatter.date}
               </BlogTitle>
             </BlogLink>
-            <p> {node.excerpt}</p>
-            <span><h4>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
-            <p> {node.wordCount.words} words</p>
-          </div>
+            <p style={{ 'color': 'black',}}> {node.excerpt}</p>
+            <span><h4 style={{ 'color': 'black',}}>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
+            <p style={{ 'color': 'black',}}> {node.wordCount.words} words</p>
+          </Card>
+        
         ))}
+ 
     </div>
   </Layout>
 )
