@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Dotdev Blog`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Get to Read Blog Posts about technological trends and tutorials on Web Development from Dotdev`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -20,11 +20,32 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/markdown-pages/images`,
+      },
+    },
+
+    // `gatsby-plugin-sharp`,
+    // `gatsby-remark-images`,
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 1200,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

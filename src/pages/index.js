@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 
 const SubContainer =styled.div`
 width: 100%;
-
+font-family: 'Niconne', cursive;
 display: flex;
 border-bottom: 2px solid orange;
 flex-direction: column;
@@ -28,11 +28,12 @@ background-size: cover;
   display: flex;  
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 90vw;
   border-radius: 5px;
   height: 70vh;
   margin-bottom: 20px;
-  margin-top: 5vh;
+  margin-top: 3vh;
   
 @media screen and (max-width: 800px) {
   background-size: cover;
@@ -45,7 +46,7 @@ background-size: cover;
 const Header= styled.div`
 display: flex;
 flex-direction: column;
-
+margin-top:-10px;
 @media screen and (max-width: 800px) {
  align-items: center;
  margin-left: 0px;
@@ -55,8 +56,6 @@ flex-direction: column;
 const Posts = styled.h4`
 font-size: 25px;
 color: white;
-
-background: green;
 font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 `
 
@@ -65,7 +64,7 @@ const CardContent =styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-margin-left: -22vw;
+flex-flow: row wrap;
 width: 85vw;
 @media screen and (max-width: 800px) {
   display: flex;
@@ -78,7 +77,7 @@ width: 85vw;
 
 const Card = styled.div`
 background: #f1faee;
-width: 30vw;
+width: 35vw;
 height: auto;
 border-radius: 10px;
 display: flex;
@@ -100,30 +99,59 @@ text-decoration: none;
 
 const BlogTitle = styled.h4 `
 margin-bottom: 20px;
-color: black;
+align-items: center;
+display: flex;
+flex-direction: column;
+color: #17141d;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bolder;
+:hover{
+  border-bottom: 2px solid orange;
+border-radius: 9px;
+}
 `
 const ImgText = styled.h2`
-color: black;
-margin-left: 35%;
+color: #17141d;
 font-size: 40px;
+font-family: 'Lobster', cursive;
+
 @media screen and (max-width: 800px) {
 font-size: 25px;
-margin-left: 16%;
   }
 
+`
+const ImgP =styled.p`
+font-size: 20px;
+text-align: center;
+background: wheat;
+margin-top: -20px;
+color: #17141d;
+font-family: 'Lobster', cursive;
+@media screen and (max-width: 800px) {
+font-size: 15px;
+width: 75vw;
+  }
+`
+
+const Ot = styled.div`
+font-family: 'Niconne', cursive;
+width: 85%;
+margin-bottom: -30px;
+color: black;
 `
 
 export default ({data}) => (
   <Layout>
     <SEO title="Home" />
     <SubContainer >
-      {/* <Header>
-      <Posts> {data.allMarkdownRemark.totalCount} Posts</Posts>
-       </Header> */}
+     
       <ContainImg>
-      <ImgText> Welcome to Dot Blog </ImgText>
+      <ImgText> Welcome to Dot Dev Blog </ImgText>
+      <ImgP>Get to Read Blog Posts about technological trends and tutorials on Web Development</ImgP>
       </ContainImg>
-        
+      <Header>
+      <Posts> {data.allMarkdownRemark.totalCount} Posts</Posts>
+       </Header>
      
        <CardContent>
          {
@@ -132,12 +160,14 @@ export default ({data}) => (
           <Card key ={node.id} >
             <BlogLink to={node.fields.slug}>
             <BlogTitle>
-             <p style={{'color': 'blue'}}> {node.frontmatter.title} - {node.frontmatter.date} </p>
+             <span style={{'color': 'blue'}}> {node.frontmatter.title} - {node.frontmatter.date} </span>
               </BlogTitle>
             </BlogLink>
-            <p style={{ 'color': 'black',}}> {node.excerpt}</p>
-            <span><h4 style={{ 'color': 'black',}}>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
-            <p style={{ 'color': 'black',}}> {node.wordCount.words} words</p>
+            <Ot>
+            <p> {node.excerpt}</p>
+            <span><h4>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
+            <p > {node.wordCount.words} words</p>
+            </Ot>
           </Card>
          
         ))}

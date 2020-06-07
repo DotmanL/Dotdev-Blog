@@ -5,7 +5,7 @@ description: 'My First Blog Post'
 author: 'Lawal Oladotun'
 ---
 
-
+ 
 > Hello everyone, welcome to my first blog post, I am Lawal Oladotun, I am
 > an aspiring fullstack developer, I have taken udemy courses on react where I have learnt tons of
 > stuff mainly from the Zero To Mastery group with my major tutors being Andrei and Yihua.

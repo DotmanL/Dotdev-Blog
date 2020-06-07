@@ -8,6 +8,7 @@ const NavItem = styled.a`
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
+  font-family: 'Lobster', cursive;
   transition: all 200ms ease-in;
   position: relative;
   :after {
