@@ -27,23 +27,21 @@ module.exports = {
       },
     },
 
-    // `gatsby-plugin-sharp`,
-    // `gatsby-remark-images`,
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     gatsbyRemarkPlugins: [
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //         options: {
-    //           maxWidth: 1200,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
-    
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 200,
+            },
+          },
+        ],
+      },
+    },
+  
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
