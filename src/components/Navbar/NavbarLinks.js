@@ -39,8 +39,9 @@ const NavItem = styled.a`
 const NavbarLinks = () => {
   return (
     <>
+    <NavItem href='/' > Blog </NavItem>
      <NavItem href='https://dotcodes.netlify.app'  target="_blank" rel="noopener noreferrer"> My Portfolio</NavItem>
-
+     
     </>
   )
 }

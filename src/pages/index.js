@@ -99,9 +99,10 @@ text-decoration: none;
 `
 
 const BlogTitle = styled.h4 `
-margin-bottom: 20px;
+margin-bottom: 10px;
 align-items: center;
 display: flex;
+height: 45px;
 flex-direction: column;
 color: #17141d;
 font-family: Arial, Helvetica, sans-serif;
@@ -136,9 +137,13 @@ width: 75vw;
 
 const Ot = styled.div`
 font-family: 'Niconne', cursive;
-width: 85%;
 margin-bottom: -30px;
 color: black;
+`
+
+const Ex = styled.p`
+width: 95%;
+margin: 10px auto;
 `
 
 export default ({data}) => (
@@ -161,11 +166,12 @@ export default ({data}) => (
           <Card key ={node.id} >
             <BlogLink to={node.fields.slug}>
             <BlogTitle>
-             <span style={{'color': 'blue'}}> {node.frontmatter.title} - {node.frontmatter.date} </span>
+             <p style={{'color': 'blue'}}> {node.frontmatter.title}</p> 
+             <p style={{'color': 'blue', 'marginTop': '-18px'}}> {node.frontmatter.date} </p>
               </BlogTitle>
             </BlogLink>
             <Ot>
-            <p> {node.excerpt}</p>
+            <Ex> {node.excerpt}</Ex>
             <span><h4>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
             <p > {node.wordCount.words} words</p>
             </Ot>
