@@ -5,7 +5,7 @@ description: 'Lets talk React'
 author: 'Lawal Oladotun'
 ---
 
- ![title](rxt.png)
+ ![title](./images/rxt.png)
 React, React, React, I know many have been wondering what React is all about, I was in your shoes some months back, ...lol
 if you guessed right, what i did first was to Google, If you are like me then, check the official react documentation here --insert links. or better still let's talk a little about what i know about react below ......
 

@@ -80,6 +80,7 @@ background: #f1faee;
 width: 35vw;
 height: auto;
 border-radius: 10px;
+margin-top: 15px;
 display: flex;
 padding: 10px 15px;
 flex-direction: column;
@@ -185,7 +186,7 @@ query {
         id
         timeToRead
         frontmatter {
-          date
+         date (formatString: "dddd, MMMM Do YYYY")
           description
           title
           author

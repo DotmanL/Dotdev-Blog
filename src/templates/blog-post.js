@@ -10,7 +10,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-font-family: 'Niconne', cursive;
 width: 80%;
 margin: 20px auto;
 @media screen and (max-width: 800px) {
@@ -55,6 +54,7 @@ return (
     
     <Title> {post.frontmatter.title}</Title>
     <Au> Written by {post.frontmatter.author} </Au> 
+    <p>{post.frontmatter.date}</p>
     <Tr>{post.timeToRead} min read</Tr>
     <Dr> • {post.frontmatter.description} •</Dr>
     <div dangerouslySetInnerHTML ={{ __html: post.html }} />
@@ -73,6 +73,7 @@ query($slug: String!){
         title
         description
         author
+        date (formatString: "dddd, MMMM Do YYYY")
     }
     wordCount {
         words
