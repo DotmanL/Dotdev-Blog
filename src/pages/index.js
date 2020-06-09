@@ -176,13 +176,14 @@ export default ({data}) => (
             </BlogLink>
             <Ot>
             <Ex> {node.excerpt}</Ex>
-            <span><h4>{node.frontmatter.author} {node.timeToRead} min read </h4> </span>
+            <span>{node.frontmatter.author} {node.timeToRead} min read  </span>
             <p > {node.wordCount.words} words</p>
             </Ot>
           </Card>
          
         ))}
   </CardContent>
+
     </SubContainer>
   </Layout>
 )
