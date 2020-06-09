@@ -29,17 +29,18 @@ background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90vw;
+  width: 75vw;
   border-radius: 5px;
-  height: 70vh;
+  height: 50vh;
   margin-bottom: 20px;
   margin-top: 3vh;
   
 @media screen and (max-width: 800px) {
   background-size: cover;
     background-position: center;
-    width: 95vw;
+    width: 100vw;
     height: 60vw;
+    margin-top: 5px;
  }
 `
 
@@ -50,6 +51,7 @@ margin-top:-10px;
 @media screen and (max-width: 800px) {
  align-items: center;
  margin-left: 0px;
+
   }
 `
 
@@ -66,11 +68,13 @@ flex-direction: row;
 justify-content: space-evenly;
 flex-flow: row wrap;
 width: 85vw;
+margin-top: -25px;
 @media screen and (max-width: 800px) {
   display: flex;
 flex-direction: column;
 margin-left: 6vw;
 width: 85vw;
+margin-top: -35px;
   }
 `
 
