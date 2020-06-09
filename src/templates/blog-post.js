@@ -43,12 +43,17 @@ border-top: 2px solid #dcdcdd;
 `
 
 
+export default ({ data, }) => {
+
+    
 
 
-export default ({ data }) => {
 const post = data.markdownRemark;
 return (
+   
     <Layout>
+        
+ 
         <SEO title= {post.frontmatter.description} />
     <Container>
     
