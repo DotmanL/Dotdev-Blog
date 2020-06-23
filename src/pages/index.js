@@ -160,7 +160,7 @@ export default ({data}) => (
       <ImgP>Get to Read Blog Posts about technological trends and tutorials on Web Development</ImgP>
       </ContainImg>
       <Header>
-      <Posts> {data.allMarkdownRemark.totalCount} Posts</Posts>
+      <Posts>{/*{data.allMarkdownRemark.totalCount} */}</Posts>
        </Header>
      
        <CardContent>
