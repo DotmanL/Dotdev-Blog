@@ -1,14 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 
-
 const NavItem = styled.a`
   text-decoration: none;
-  color: white;
+  color: black;
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   transition: all 200ms ease-in;
   position: relative;
   :after {
@@ -39,9 +38,15 @@ const NavItem = styled.a`
 const NavbarLinks = () => {
   return (
     <>
-    <NavItem href='/' > Blog </NavItem>
-     <NavItem href='https://dotcodes.netlify.app'  target="_blank" rel="noopener noreferrer"> My Portfolio</NavItem>
-     
+      <NavItem href="/"> Blog </NavItem>
+      <NavItem
+        href="https://dotcodes.netlify.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        My Portfolio
+      </NavItem>
     </>
   )
 }

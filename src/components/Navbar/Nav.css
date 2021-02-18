@@ -1,0 +1,13 @@
+.nav-background {
+  background-color: white;
+  height: 80px;
+  /* border-bottom: 1.5px solid #eb392e; */
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 800px) {
+  .nav-background {
+    background-color: white;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2);
+  }
+}

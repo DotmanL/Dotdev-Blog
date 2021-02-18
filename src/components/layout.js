@@ -12,7 +12,6 @@ import PropTypes from "prop-types"
 import "./layout.css"
 import Navbar from "./Navbar/Navbar"
 
-
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
@@ -26,12 +25,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar homepage={true} />
 
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: '95vw',
+          maxWidth: "100vw",
         }}
       >
         <main>{children}</main>
